@@ -18,7 +18,7 @@ void estrai_dati(int ac, char **av, int *vett, int *lung)
 
 void fai_spazio(int posizione, int *vett, int lung)
 {
-	for (int j = lung - 1; j > posizione; ++j) 
+	for (int j = lung; j > posizione; --j) 
 		vett[j] = vett[j-1];
 }
 
@@ -36,6 +36,9 @@ void inserisci(int nuovo_dato, int num_dati_ord, int *vett)
 			fai_spazio(i, vett, num_dati_ord);
 			vett[i] = nuovo_dato;
 			return;
+		}
+		else{
+			vett[num_dati_ord] = nuovo_dato;
 		}
 	}
 }
